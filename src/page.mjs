@@ -20,6 +20,7 @@ export const page = `<!doctype html>
   .up { top:6px; left:95px } .down { bottom:6px; left:95px } .left { left:6px; top:95px } .right { right:6px; top:95px }
   .ok { position:absolute; inset:68px; background:var(--accent); color:#111; font-size:20px; }
   .row { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; width:100%; }
+  .row.media { grid-template-columns:repeat(5,1fr); }
   .row button { height:52px; border:1px solid var(--line); background:var(--pad); font-size:19px; }
   form { display:flex; gap:8px; width:100%; } form input { flex:1; }
   .send { padding:0 16px; border:1px solid var(--line); background:var(--pad); border-radius:10px; }
@@ -40,15 +41,15 @@ export const page = `<!doctype html>
     <button data-key="menu" aria-label="Menu">☰</button>
     <button data-key="ok" data-hold="long" aria-label="Hold OK">OK⋯</button>
   </div>
-  <div class="row">
-    <button data-key="previous" aria-label="Previous">⏮</button>
-    <button data-key="rewind" aria-label="Rewind">⏪</button>
-    <button data-key="playpause" aria-label="Play or pause">⏯</button>
-    <button data-key="fastforward" aria-label="Fast forward">⏩</button>
+  <div class="row media">
+    <button data-key="previous" aria-label="Previous">⏮&#xFE0E;</button>
+    <button data-key="rewind" aria-label="Rewind">⏪&#xFE0E;</button>
+    <button data-key="playpause" aria-label="Play or pause">⏯&#xFE0E;</button>
+    <button data-key="fastforward" aria-label="Fast forward">⏩&#xFE0E;</button>
+    <button data-key="next" aria-label="Next">⏭&#xFE0E;</button>
   </div>
-  <div class="row"><button data-key="next" aria-label="Next" style="grid-column:4">⏭</button></div>
   <form id="type"><input name="text" maxlength="64" placeholder="Type on the device" autocomplete="off"><button class="send" type="submit" aria-label="Send text">⏎</button></form>
-  <p>Keyboard: arrows, Enter (Shift+Enter holds), Backspace, Escape (Home), M (Menu), Space, [ and ]</p>
+  <p>Keys: arrows · Enter (Shift holds) · Backspace · Esc · M · Space · [ ]</p>
   <p id="status" role="status"></p>
 </main><script>
   const deviceSelect = document.getElementById("device");
