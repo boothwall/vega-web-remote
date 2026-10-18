@@ -5,10 +5,14 @@ A remote control for the Vega Virtual Device and Fire TV devices in developer mo
 The Virtual Device's on-screen remote is small and has no media keys. Testing a TV app also means pressing the same buttons over and over. This gives you a full remote in a browser tab: D-pad, OK (tap or hold), Back, Home, Menu, the media keys and text entry, with keyboard shortcuts. It presses real keys on the device through Vega's developer-mode input injector, so your app sees exactly what a physical remote sends.
 
 ```sh
-npx vega-web-remote
+npx github:ddedic/vega-web-remote
 ```
 
-Open http://localhost:4400, pick the device and press away. Needs the [Vega SDK](https://developer.amazon.com/docs/vega/) (the `vega` CLI, found in `~/vega/bin` or on your `PATH`) and Node 20 or later. No dependencies.
+Or clone it and run `npm start`.
+
+Open http://localhost:4400, pick the device and press away.
+
+![The remote in a browser tab, beside the Vega Virtual Device](docs/screenshot.jpg) Needs the [Vega SDK](https://developer.amazon.com/docs/vega/) (the `vega` CLI, found in `~/vega/bin` or on your `PATH`) and Node 20 or later. No dependencies.
 
 | Key | Button |
 |---|---|
@@ -41,4 +45,4 @@ The page posts to a small server on `127.0.0.1`. The server runs `vega device ru
 npm test
 ```
 
-MIT licensed.
+Built while making [BoothWall](https://github.com/ddedic/boothwall), a photo wall for Fire TV. MIT licensed.
