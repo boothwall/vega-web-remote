@@ -1,0 +1,13 @@
+{
+  "name": "vega-web-remote",
+  "version": "0.1.0",
+  "description": "A remote control for the Vega Virtual Device and Fire TV devices in developer mode, in your browser.",
+  "type": "module",
+  "bin": { "vega-web-remote": "bin/vega-web-remote.mjs" },
+  "files": ["bin", "src"],
+  "scripts": { "test": "node --test", "start": "node bin/vega-web-remote.mjs" },
+  "engines": { "node": ">=20" },
+  "keywords": ["vega", "vega-os", "fire-tv", "remote", "react-native", "developer-tools"],
+  "author": "Danijel Dedic",
+  "license": "MIT"
+}
