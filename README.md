@@ -13,7 +13,7 @@
 <td><b>Built while making <a href="https://boothwall.com">BoothWall</a></b>: turn any screen into a live photo wall. Guests send photos from their phones, the host approves them, and they land on the TV.<br><a href="https://boothwall.com"><b>boothwall.com →</b></a></td>
 </tr></table>
 
-<img src="docs/images/remote-states.jpg" width="100%" alt="Four phone screens of the remote: ready, a Right press answered in 40 ms with the blue pilot light on, OK held with its ring filling, and a red pilot light with a toast saying the Virtual Device didn't respond, with Retry">
+<img src="docs/images/remote-states.jpg" width="100%" alt="Four phone screens of the remote: ready, a Right press answered, with the blue pilot light on, OK held with its ring filling, and a red pilot light with a toast saying the Virtual Device didn't respond, with Retry">
 
 ```sh
 npx github:boothwall/vega-web-remote
@@ -72,7 +72,7 @@ vega-web-remote [--port 4400] [--vega <path to the vega CLI>]
 
 <table>
 <tr>
-<td width="50%"><img src="docs/images/remote-desktop.png" alt="The remote on a desktop browser: device picker, a remote body with a ring D-pad and OK, Back, Home and Menu, Rewind, Play/Pause and Fast-forward, Previous, Hold OK and Next, a text field and the status line Right · 41 ms"></td>
+<td width="50%"><img src="docs/images/remote-desktop.png" alt="The remote on a desktop browser: device picker, a remote body with a ring D-pad and OK, Back, Home and Menu, Rewind, Play/Pause and Fast-forward, Previous, Hold OK and Next, a text field and the status line showing the last press and its round trip"></td>
 <td width="50%"><img src="docs/images/remote-phone.png" alt="The same remote on a phone, ready"></td>
 </tr>
 </table>
