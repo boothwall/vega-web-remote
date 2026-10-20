@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0c0f">
+<title>Vega web remote</title>
+<style>/*css*/</style>
+</head>
+<body data-state="loading">
+<main class="app">
+  <h1 class="brand">Vega web remote</h1>
+  <header class="top">
+    <label class="picker"><span class="dot" aria-hidden="true"></span><span class="sr">Device</span>
+      <select id="device" disabled><option>Searching…</option></select>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></label>
+    <button id="help" class="help" type="button" aria-label="Keyboard shortcuts" aria-haspopup="dialog">?</button>
+  </header>
+
+  <section class="remote" aria-label="Remote">
+    <div class="pad" role="group" aria-label="Navigation">
+      <button class="dir up" data-key="up" aria-label="Up" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
+      <button class="dir left" data-key="left" aria-label="Left" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+      <button class="dir right" data-key="right" aria-label="Right" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+      <button class="dir down" data-key="down" aria-label="Down" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <button class="ok" data-key="ok" aria-label="OK (hold for long press)" disabled><span>OK</span></button>
+    </div>
+
+    <div class="row">
+      <button class="key" data-key="back" aria-label="Back" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button>
+      <button class="key" data-key="home" aria-label="Home" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7"/><path d="M6 10v10h12V10"/></svg></button>
+      <button class="key" data-key="menu" aria-label="Menu" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg></button>
+    </div>
+    <div class="row">
+      <button class="key" data-key="rewind" aria-label="Rewind" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M11 7v10l-7-5zM20 7v10l-7-5z"/></svg></button>
+      <button class="key" data-key="playpause" aria-label="Play or pause" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M4 6v12l8-6z"/><path d="M16 7v10M20 7v10"/></svg></button>
+      <button class="key" data-key="fastforward" aria-label="Fast forward" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M4 7v10l7-5zM13 7v10l7-5z"/></svg></button>
+    </div>
+    <div class="row minor">
+      <button class="key sm" data-key="previous" aria-label="Previous" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M17 6v12l-9-6z"/><path d="M6 6v12"/></svg></button>
+      <button class="key sm hold" data-key="ok" data-hold="long" aria-label="Hold OK (long press)" disabled><span>Hold OK</span></button>
+      <button class="key sm" data-key="next" aria-label="Next" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M7 6v12l9-6z"/><path d="M18 6v12"/></svg></button>
+    </div>
+
+    <div class="empty" role="note">
+      <b>No device found</b>
+      <ol><li>Start the Virtual Device:<code>vega virtual-device start</code></li>
+          <li>Or put a Fire TV in developer mode and check <code>vega device list</code></li></ol>
+      <button id="again" class="again" type="button">Search again</button>
+    </div>
+  </section>
+
+  <form id="type" class="type" novalidate>
+    <input id="text" name="text" maxlength="64" placeholder="Type on the TV" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Text to type on the TV" disabled>
+    <button class="send" type="submit" aria-label="Send text" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </form>
+
+  <p class="status" role="status"><span class="led" aria-hidden="true"></span><span id="line">Looking for devices…</span></p>
+  <p class="credit">Built while making <a href="https://oss.boothwall.com" target="_blank" rel="noopener">BoothWall</a>, a live photo wall for Fire&nbsp;TV</p>
+
+  <div id="toast" class="toast" role="alert" hidden>
+    <span id="toast-text"></span>
+    <button id="retry" type="button">Retry</button>
+  </div>
+
+  <dialog id="keys" class="keys" aria-labelledby="keys-title">
+    <b id="keys-title">Keyboard</b>
+    <dl><dt>← ↑ → ↓</dt><dd>Move</dd><dt>Enter</dt><dd>OK</dd><dt>Shift Enter</dt><dd>Hold OK</dd><dt>Backspace</dt><dd>Back</dd>
+        <dt>Esc</dt><dd>Home</dd><dt>M</dt><dd>Menu</dd><dt>Space</dt><dd>Play / pause</dd><dt>[ ]</dt><dd>Previous / next</dd><dt>?</dt><dd>This sheet</dd></dl>
+    <form method="dialog"><button type="submit">Done</button></form>
+  </dialog>
+</main>
+<script>/*js*/</script>
+</body>
+</html>

@@ -23,7 +23,8 @@ The tests don't need the Vega SDK or a device; they use a fake device list and a
 | `src/keys.mjs` | The button allowlist and the text rule. Builds every `inputd-cli` command |
 | `src/device.mjs` | Runs the `vega` CLI with `execFile`, parses `vega device list`, caches the list |
 | `src/server.mjs` | The HTTP server: Host and Origin checks, the routes, the 400/403/502 answers |
-| `src/page.mjs` | The whole page, HTML, CSS and script in one string |
+| `src/page.mjs` | The page: inlines `src/ui/` into one HTML response at startup |
+| `src/ui/` | `index.html`, `base.css` (layout and states), `remote.css` (every colour, as tokens) and `app.js` (presses, hold, status, toasts) |
 | `test/*.test.mjs` | `node:test` tests, one file per source file |
 
 ## Ground rules
