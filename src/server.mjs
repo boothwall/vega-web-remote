@@ -38,8 +38,17 @@ function readBody(req) {
  * the devices to choose from. Every device and command is checked here first.
  */
 export function createRemoteServer({ run, devices }) {
+  const listed = () =>
+    devices().catch((error) => {
+      console.error(`vega device list: ${error.message}`);
+      return null;
+    });
+
   const send = async (res, device, command) => {
-    if (!command || !(await devices()).includes(device)) return res.writeHead(400).end();
+    if (!command) return res.writeHead(400).end();
+    const known = await listed();
+    if (known === null) return res.writeHead(502).end();
+    if (!known.includes(device)) return res.writeHead(400).end();
     try {
       await run(device, command);
       res.writeHead(204).end();
@@ -61,7 +70,7 @@ export function createRemoteServer({ run, devices }) {
       return send(res, device, textCommand(text));
     }
     if (req.method === "GET" && url.pathname === "/devices") {
-      const list = await devices().catch(() => []);
+      const list = (await listed()) ?? [];
       return res.writeHead(200, { "content-type": "application/json" }).end(JSON.stringify(list));
     }
     if (req.method === "GET" && url.pathname === "/")

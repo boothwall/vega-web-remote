@@ -78,3 +78,21 @@ test("refuses presses from other sites and other hostnames", async () => {
   assert.equal(await raw(path, { host: `localhost:${port}`, origin: `http://localhost:${port}` }), 204);
   assert.deepEqual(sent.splice(0), [["VirtualDevice", "inputd-cli button_press KEY_HOMEPAGE short"]]);
 });
+
+test("answers 502 and keeps serving when the device list fails", async () => {
+  const broken = createRemoteServer({
+    run: async () => assert.fail("nothing should run"),
+    devices: async () => {
+      throw new Error("spawn vega ENOENT");
+    },
+  });
+  await new Promise((resolve) => broken.listen(0, "127.0.0.1", resolve));
+  const at = `http://127.0.0.1:${broken.address().port}`;
+  try {
+    assert.equal((await fetch(at + "/press/ok?device=VirtualDevice", { method: "POST" })).status, 502);
+    assert.deepEqual(await (await fetch(at + "/devices")).json(), []);
+    assert.equal((await fetch(at + "/")).status, 200);
+  } finally {
+    broken.close();
+  }
+});
