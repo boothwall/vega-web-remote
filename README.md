@@ -145,7 +145,7 @@ Found a way round any of these? Please report it privately; see [SECURITY.md](SE
 
 Issues and pull requests are welcome. [CONTRIBUTING.md](CONTRIBUTING.md) covers the setup (`npm test` is all there is), how the code is laid out and the few ground rules. Please follow the [code of conduct](CODE_OF_CONDUCT.md).
 
-Made during the Build, Ship, Shape: Amazon Developer Hackathon, while building [BoothWall](https://github.com/boothwall/boothwall), a photo wall for Fire TV. It started as BoothWall's laptop remote and now stands on its own; neither project depends on the other.
+Made during the Build, Ship, Shape: Amazon Developer Hackathon, while building [BoothWall](https://github.com/boothwall/boothwall-oss), a photo wall for Fire TV. It started as BoothWall's laptop remote and now stands on its own; neither project depends on the other.
 
 ## Licence
 
