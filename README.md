@@ -1,4 +1,5 @@
-# vega-web-remote
+<p align="center"><img src="docs/images/icon.svg" width="96" height="96" alt=""></p>
+<h1 align="center">Vega web remote</h1>
 
 **A full remote control for the Vega Virtual Device and Fire TV devices in developer mode, in a browser tab.**
 
