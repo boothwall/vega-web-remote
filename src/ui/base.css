@@ -43,8 +43,6 @@ svg .f { fill: currentColor; stroke: none; }
 .key.sm { width: 44px; height: 44px; color: var(--muted); } .key.sm svg { width: 20px; height: 20px; }
 .key.hold { width: auto; padding: 0 16px; border-radius: 22px; font-size: 13px; font-weight: 600; }
 
-.is-pressed { transform: scale(.94); background: var(--press) !important; color: var(--press-ink) !important; }
-.dir.is-pressed { background: var(--press-soft) !important; color: var(--accent) !important; transform: none; }
 .key:active:not(:disabled), .ok:active:not(:disabled) { transform: scale(.94); }
 
 /* text */
