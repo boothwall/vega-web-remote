@@ -1,0 +1,22 @@
+name: Feature request
+description: A button, shortcut or option you'd like.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What you're trying to test or do
+      description: The situation, not the solution yet. For example "my app handles the Menu key differently when held".
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you'd like
+      description: If it's a key, the `inputd-cli` key name helps, if you know it.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you've tried instead

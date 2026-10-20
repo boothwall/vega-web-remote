@@ -1,0 +1,49 @@
+name: Bug report
+description: Something doesn't work as described in the README.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting it. If it's a security problem, please don't file it here: use **Security → Report a vulnerability** instead (see SECURITY.md).
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start the Virtual Device
+        2. Run npx github:<OWNER>/vega-web-remote
+        3. Press …
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Vega Virtual Device
+        - Fire TV in developer mode
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Output of `vega --version`, `node --version`, and your operating system and browser.
+      placeholder: "Vega CLI 1.4.2, SDK 0.24, Node 22.12.0, macOS 15, Chrome 141"
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Terminal output
+      description: Anything the remote printed. Please remove device serials and IP addresses you'd rather not share.
+      render: shell
