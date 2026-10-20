@@ -7,7 +7,7 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/boothwall/vega-web-remote/ci.yml?branch=main&label=CI)](https://github.com/boothwall/vega-web-remote/actions/workflows/ci.yml)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-blue)](package.json)
 
-<img src="docs/screenshot.jpg" width="100%" alt="The remote in a browser tab on the left, the Vega Virtual Device on the right showing a photo wall">
+<img src="docs/images/remote-states.jpg" width="100%" alt="Four phone screens of the remote: ready, a Right press answered in 40 ms with the blue pilot light on, OK held with its ring filling, and a red pilot light with a toast saying the Virtual Device didn't respond, with Retry">
 
 ```sh
 npx github:boothwall/vega-web-remote
@@ -22,7 +22,7 @@ The Virtual Device's on-screen remote is small and has no media keys, and testin
 It presses real keys on the device through Vega's developer-mode input injector (`inputd-cli`), so your app sees what a physical remote sends. That matters for two things that are otherwise awkward to test:
 
 - **Media keys.** They reach an app through Vega Media Controls, not through `useTVEventHandler`, so testing a media session needs real key events.
-- **Long presses.** A held OK arrives as repeated key-downs and one key-up. The **OK⋯** button (or Shift+Enter) sends exactly that.
+- **Long presses.** A held OK arrives as repeated key-downs and one key-up. Hold OK on the remote, press **Hold OK**, or press Shift+Enter, and it sends exactly that.
 
 Typing into a search box with the D-pad on an on-screen keyboard is slow too, so there's a text field that types straight onto the device.
 
@@ -66,12 +66,12 @@ vega-web-remote [--port 4400] [--vega <path to the vega CLI>]
 
 <table>
 <tr>
-<td width="50%"><img src="docs/images/remote-desktop.png" alt="The remote on a desktop browser: device picker, round D-pad with an orange OK, Back, Home, Menu and held-OK buttons, five media keys and a text field"></td>
-<td width="50%"><img src="docs/images/remote-phone.png" alt="The same remote filling a phone-sized browser window"></td>
+<td width="50%"><img src="docs/images/remote-desktop.png" alt="The remote on a desktop browser: device picker, a remote body with a ring D-pad and OK, Back, Home and Menu, Rewind, Play/Pause and Fast-forward, Previous, Hold OK and Next, a text field and the status line Right · 41 ms"></td>
+<td width="50%"><img src="docs/images/remote-phone.png" alt="The same remote on a phone, ready"></td>
 </tr>
 </table>
 
-Click the buttons, or use the keyboard while the page has focus:
+The keys are in the order of a TV remote: the D-pad and OK, then Back, Home and Menu, then Rewind, Play/Pause and Fast-forward, then Previous, Hold OK and Next. Click or tap them, or use the keyboard while the page has focus:
 
 | Key | Button |
 | --- | --- |
@@ -84,10 +84,13 @@ Click the buttons, or use the keyboard while the page has focus:
 | Space | Play/Pause |
 | `[` | Previous |
 | `]` | Next |
+| `?` | The shortcut sheet |
 
-Rewind and Fast-forward are on-screen buttons only. Shortcuts are off while the text field has focus, so you can type normally.
+Rewind and Fast-forward are on-screen buttons only. Shortcuts are off while the text field or the device picker has focus, so you can type normally.
 
-To type on the device, put the cursor in a text field in your app, type in **Type on the device** and press Enter or **⏎**. Letters, digits, spaces and `@._-` are allowed, up to 64 characters.
+Hold OK on the remote for 0.6 seconds for a long press; the ring around it fills as you hold. The status line under the remote shows the last press and how long the device took, for example **Right · 41 ms**. The light at the top of the remote turns blue when a press lands and red when it fails, and a failure also shows a message with **Retry**.
+
+To type on the device, put the cursor in a text field in your app, type in **Type on the TV** and press Enter or the arrow button. Letters, digits, spaces and `@._-` are allowed, up to 64 characters.
 
 ## How it works
 
@@ -127,9 +130,9 @@ Found a way round any of these? Please report it privately; see [SECURITY.md](SE
 
 ## Troubleshooting
 
-**"No device found."** Start the Virtual Device with `vega virtual-device start`, or check that your Fire TV is in developer mode and connected. Whatever `vega device list` shows is what the picker shows. The list is cached for 10 seconds, so reload the page after a device appears.
+**"No device found."** Start the Virtual Device with `vega virtual-device start`, or check that your Fire TV is in developer mode and connected. Whatever `vega device list` shows is what the picker shows. The list is cached for 10 seconds, so press **Search again** (or reload the page) a few seconds after a device appears.
 
-**"Couldn't reach the device."** The `vega` command failed; the terminal running the remote prints why. Common causes: the device went to sleep, the Virtual Device was stopped, or the Fire TV left developer mode.
+**"VirtualDevice didn't respond."** (or your Fire TV's name) The `vega` command failed; the terminal running the remote prints why. Common causes: the device went to sleep, the Virtual Device was stopped, or the Fire TV left developer mode.
 
 **`spawn vega ENOENT` in the terminal.** The `vega` CLI isn't in `~/vega/bin` or on your `PATH`. Pass its path: `--vega /path/to/vega`.
 
@@ -152,3 +155,5 @@ Made during the Build, Ship, Shape: Amazon Developer Hackathon, while building [
 [MIT](LICENSE) © Danijel Dedic
 
 Amazon, Fire TV, Vega and Alexa are trademarks of Amazon.com, Inc. or its affiliates. This project isn't affiliated with or endorsed by Amazon.
+
+Built while making [BoothWall](https://oss.boothwall.com), a live photo wall for Fire TV.
