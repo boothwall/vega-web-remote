@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0c0f">
 <title>Vega web remote</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22#1d1f23%22/><g transform=%22translate(6 6) scale(.8125)%22><circle cx=%2232%22 cy=%2232%22 r=%2222%22 fill=%22none%22 stroke=%22#f3f4f6%22 stroke-width=%227%22 stroke-dasharray=%2228.26 6.30%22 stroke-dashoffset=%2231.41%22 transform=%22rotate(-90 32 32)%22/><circle cx=%2232%22 cy=%2232%22 r=%227.5%22 fill=%22#8fd0ff%22/></g></svg>">
 <style>/*css*/</style>
 </head>
 <body data-state="loading">
 <main class="app">
-  <h1 class="brand">Vega web remote</h1>
+  <h1 class="brand"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle class="f" cx="12" cy="12" r="3.2"/></svg><span><b>Vega</b> web remote</span></h1>
   <header class="top">
     <label class="picker"><span class="dot" aria-hidden="true"></span><span class="sr">Device</span>
       <select id="device" disabled><option>Searching…</option></select>
@@ -56,7 +57,6 @@
   </form>
 
   <p class="status" role="status"><span class="led" aria-hidden="true"></span><span id="line">Looking for devices…</span></p>
-  <p class="credit"><svg class="bw" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="12" height="14" rx="1.5" transform="rotate(-8 9.5 12)" opacity=".45"/><rect x="8" y="4" width="12" height="14" rx="1.5" transform="rotate(6 14 11)"/></svg>Built while making <a href="https://oss.boothwall.com" target="_blank" rel="noopener">BoothWall</a>, a live photo wall for Fire&nbsp;TV</p>
 
   <div id="toast" class="toast" role="alert" hidden>
     <span id="toast-text"></span>
@@ -70,6 +70,7 @@
     <form method="dialog"><button type="submit">Done</button></form>
   </dialog>
 </main>
+<footer class="foot"><a href="https://oss.boothwall.com" target="_blank" rel="noopener" aria-label="Built while making BoothWall, a live photo wall for Fire TV"><span class="t"><span>Built while making</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NjAiIGhlaWdodD0iMjIwIiB2aWV3Qm94PSIwIDAgODYwIDIyMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Indhcm0iIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkZCNTQ3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGOTkwMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzAwQThFMSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3QjYxRkYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDwhLS0gVHdvIHN0YWNrZWQgcG9sYXJvaWRzOiB0aGUgd2FsbCBpbiBtaW5pYXR1cmUsIHdpdGggYSBicmlnaHQgc3RhciBpbiB0aGUgcGhvdG8uIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2IDMwKSByb3RhdGUoLTggNzAgODApIj4KICAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjgiIGhlaWdodD0iMTUwIiByeD0iOCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iMC4zNSIvPgogIDwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MCAyOCkgcm90YXRlKDYgNzAgODApIj4KICAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjgiIGhlaWdodD0iMTUwIiByeD0iOCIgZmlsbD0iI0ZGRkZGRiIvPgogICAgPHJlY3QgeD0iMTIiIHk9IjEyIiB3aWR0aD0iMTA0IiBoZWlnaHQ9IjEwMCIgcng9IjMiIGZpbGw9InVybCgjc2t5KSIvPgogICAgPGNpcmNsZSBjeD0iODIiIGN5PSI0NCIgcj0iMTMiIGZpbGw9IiNGRjk5MDAiLz4KICAgIDxwYXRoIGQ9Ik0xMiAxMTIgbDM0IC0zOCBsMjYgMjYgbDE0IC0xNCBsMzAgMjYgeiIgZmlsbD0iIzIzMkYzRSIgb3BhY2l0eT0iMC41NSIvPgogIDwvZz4KICA8dGV4dCB4PSIyMDgiIHk9IjE0NiIgZm9udC1mYW1pbHk9IkF2ZW5pciBOZXh0IiBmb250LXdlaWdodD0iODAwIiBmb250LXNpemU9IjExMiIgbGV0dGVyLXNwYWNpbmc9Ii0yIiBmaWxsPSIjRkZGRkZGIj5Cb290aDx0c3BhbiBmaWxsPSJ1cmwoI3dhcm0pIj5XYWxsPC90c3Bhbj48L3RleHQ+Cjwvc3ZnPgo=" alt="" width="78" height="20"></span><small>a live photo wall for Fire TV</small></a></footer>
 <script>/*js*/</script>
 </body>
 </html>
