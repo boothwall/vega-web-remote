@@ -4,6 +4,16 @@ All notable changes to this project are listed here. The format follows [Keep a 
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-10-20
+
+### Changed
+
+- OK is honey gold, and a press lights in the same gold.
+
+### Fixed
+
+- A pressed key looks pushed in and keeps its colour, instead of turning flat slate blue; a pressed D-pad edge lights its arrow instead of a blurry blob.
+
 ## [0.2.0] - 2026-10-20
 
 A new look: the remote now looks and reads like a TV remote.
@@ -52,6 +62,7 @@ The first release, made during the Build, Ship, Shape: Amazon Developer Hackatho
 - Commands go to `execFile`, never a local shell. Typed text is restricted and single-quoted, because the device runs it through a shell.
 - Requests need a local Host header and, when the browser sends one, a matching Origin, so other web pages and DNS-rebound hostnames can't press keys.
 
-[Unreleased]: https://github.com/boothwall/vega-web-remote/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/boothwall/vega-web-remote/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/boothwall/vega-web-remote/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/boothwall/vega-web-remote/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/boothwall/vega-web-remote/releases/tag/v0.1.0
