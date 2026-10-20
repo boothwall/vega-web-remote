@@ -8,6 +8,11 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/boothwall/vega-web-remote/ci.yml?branch=main&label=CI)](https://github.com/boothwall/vega-web-remote/actions/workflows/ci.yml)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-blue)](package.json)
 
+<table><tr>
+<td><a href="https://boothwall.com"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/images/boothwall-symbol-on-dark.svg"><img src="docs/images/boothwall-symbol-on-light.svg" width="44" height="40" alt="BoothWall"></picture></a></td>
+<td><b>Built while making <a href="https://boothwall.com">BoothWall</a></b>: turn any screen into a live photo wall. Guests send photos from their phones, the host approves them, and they land on the TV.<br><a href="https://boothwall.com"><b>boothwall.com →</b></a></td>
+</tr></table>
+
 <img src="docs/images/remote-states.jpg" width="100%" alt="Four phone screens of the remote: ready, a Right press answered in 40 ms with the blue pilot light on, OK held with its ring filling, and a red pilot light with a toast saying the Virtual Device didn't respond, with Retry">
 
 ```sh
@@ -157,4 +162,4 @@ Made during the Build, Ship, Shape: Amazon Developer Hackathon, while building [
 
 Amazon, Fire TV, Vega and Alexa are trademarks of Amazon.com, Inc. or its affiliates. This project isn't affiliated with or endorsed by Amazon.
 
-Built while making [BoothWall](https://oss.boothwall.com), a live photo wall for Fire TV.
+Built while making [BoothWall](https://boothwall.com), a live photo wall for Fire TV.
