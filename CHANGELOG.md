@@ -11,6 +11,7 @@ A new look: the remote now looks and reads like a TV remote.
 ### Changed
 
 - The keys sit in a remote body in the order of a TV remote: the D-pad and OK, then Back, Home and Menu, then Rewind, Play/Pause and Fast-forward, then Previous, Hold OK and Next. It is the same column on a phone and on a desktop.
+- A soft blue backlight glows behind the remote.
 - One status line replaces the error text: the last press and its round trip (**Right · 41 ms**), **Holding OK…**, or what went wrong.
 - The text field is called **Type on the TV**, and text it won't accept says why instead of being sent.
 
