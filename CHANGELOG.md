@@ -28,7 +28,8 @@ A new look: the remote now looks and reads like a TV remote.
 ### Fixed
 
 - Keyboard shortcuts no longer fire while the device picker has focus, or with Cmd, Ctrl or Alt held, so browser shortcuts work.
- - 2026-10-20
+
+## [0.1.0] - 2026-10-20
 
 The first release, made during the Build, Ship, Shape: Amazon Developer Hackathon.
 
