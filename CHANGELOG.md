@@ -64,5 +64,5 @@ The first release, made during the Build, Ship, Shape: Amazon Developer Hackatho
 
 [Unreleased]: https://github.com/boothwall/vega-web-remote/compare/v0.2.1...HEAD
 [0.2.1]: https://github.com/boothwall/vega-web-remote/compare/v0.2.0...v0.2.1
-[0.2.0]: https://github.com/boothwall/vega-web-remote/compare/8f79cb3...v0.2.0
-[0.1.0]: https://github.com/boothwall/vega-web-remote/tree/8f79cb3
+[0.2.0]: https://github.com/boothwall/vega-web-remote/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/boothwall/vega-web-remote/releases/tag/v0.1.0
