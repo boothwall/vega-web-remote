@@ -14,13 +14,13 @@
     "react-native",
     "developer-tools"
   ],
-  "homepage": "https://github.com/<OWNER>/vega-web-remote#readme",
+  "homepage": "https://github.com/boothwall/vega-web-remote#readme",
   "bugs": {
-    "url": "https://github.com/<OWNER>/vega-web-remote/issues"
+    "url": "https://github.com/boothwall/vega-web-remote/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/<OWNER>/vega-web-remote.git"
+    "url": "git+https://github.com/boothwall/vega-web-remote.git"
   },
   "license": "MIT",
   "author": "Danijel Dedic",

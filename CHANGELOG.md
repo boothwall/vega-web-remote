@@ -27,5 +27,5 @@ The first release, made during the Build, Ship, Shape: Amazon Developer Hackatho
 - Commands go to `execFile`, never a local shell. Typed text is restricted and single-quoted, because the device runs it through a shell.
 - Requests need a local Host header and, when the browser sends one, a matching Origin, so other web pages and DNS-rebound hostnames can't press keys.
 
-[Unreleased]: https://github.com/<OWNER>/vega-web-remote/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/<OWNER>/vega-web-remote/releases/tag/v0.1.0
+[Unreleased]: https://github.com/boothwall/vega-web-remote/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/boothwall/vega-web-remote/releases/tag/v0.1.0

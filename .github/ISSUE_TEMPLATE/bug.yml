@@ -19,7 +19,7 @@ body:
       label: Steps to reproduce
       placeholder: |
         1. Start the Virtual Device
-        2. Run npx github:<OWNER>/vega-web-remote
+        2. Run npx github:boothwall/vega-web-remote
         3. Press …
     validations:
       required: true

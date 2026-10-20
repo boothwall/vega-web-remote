@@ -4,13 +4,13 @@
 
 [![License: MIT](https://img.shields.io/badge/licence-MIT-green)](LICENSE)
 [![Node 20+](https://img.shields.io/badge/node-%3E%3D20-339933)](package.json)
-[![CI](https://img.shields.io/github/actions/workflow/status/<OWNER>/vega-web-remote/ci.yml?branch=main&label=CI)](https://github.com/<OWNER>/vega-web-remote/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/boothwall/vega-web-remote/ci.yml?branch=main&label=CI)](https://github.com/boothwall/vega-web-remote/actions/workflows/ci.yml)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-blue)](package.json)
 
 <img src="docs/screenshot.jpg" width="100%" alt="The remote in a browser tab on the left, the Vega Virtual Device on the right showing a photo wall">
 
 ```sh
-npx github:<OWNER>/vega-web-remote
+npx github:boothwall/vega-web-remote
 ```
 
 Then open http://localhost:4400, pick the device and press away.
@@ -37,13 +37,13 @@ Typing into a search box with the D-pad on an on-screen keyboard is slow too, so
 Run it straight from GitHub:
 
 ```sh
-npx github:<OWNER>/vega-web-remote
+npx github:boothwall/vega-web-remote
 ```
 
 Or clone it and run it with Node:
 
 ```sh
-git clone https://github.com/<OWNER>/vega-web-remote.git
+git clone https://github.com/boothwall/vega-web-remote.git
 cd vega-web-remote
 npm start                     # or: node bin/vega-web-remote.mjs
 ```
@@ -145,7 +145,7 @@ Found a way round any of these? Please report it privately; see [SECURITY.md](SE
 
 Issues and pull requests are welcome. [CONTRIBUTING.md](CONTRIBUTING.md) covers the setup (`npm test` is all there is), how the code is laid out and the few ground rules. Please follow the [code of conduct](CODE_OF_CONDUCT.md).
 
-Made during the Build, Ship, Shape: Amazon Developer Hackathon, while building [BoothWall](https://github.com/ddedic/boothwall), a photo wall for Fire TV. It started as BoothWall's laptop remote and now stands on its own; neither project depends on the other.
+Made during the Build, Ship, Shape: Amazon Developer Hackathon, while building [BoothWall](https://github.com/boothwall/boothwall), a photo wall for Fire TV. It started as BoothWall's laptop remote and now stands on its own; neither project depends on the other.
 
 ## Licence
 

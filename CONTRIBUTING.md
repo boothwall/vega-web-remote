@@ -7,7 +7,7 @@ Thanks for taking a look. Issues and pull requests are welcome, especially from 
 You need Node 20 or later. There is nothing to install: the project has no dependencies and no build step.
 
 ```sh
-git clone https://github.com/<OWNER>/vega-web-remote.git
+git clone https://github.com/boothwall/vega-web-remote.git
 cd vega-web-remote
 npm test     # runs node --test
 npm start    # serves the remote at http://localhost:4400
