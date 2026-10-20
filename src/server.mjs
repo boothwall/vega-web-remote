@@ -4,6 +4,22 @@ import { pressCommand, textCommand } from "./keys.mjs";
 import { page } from "./page.mjs";
 
 const MAX_BODY = 1024;
+const LOCAL_HOSTNAMES = new Set(["localhost", "127.0.0.1", "[::1]"]);
+
+/**
+ * Whether the request comes from this page on this machine. The Host check stops DNS rebinding;
+ * the Origin check stops another site in the same browser posting presses here.
+ */
+function fromThisPage(req) {
+  const host = req.headers.host ?? "";
+  const origin = req.headers.origin;
+  try {
+    if (!LOCAL_HOSTNAMES.has(new URL(`http://${host}`).hostname)) return false;
+  } catch {
+    return false;
+  }
+  return origin === undefined || origin === `http://${host}`;
+}
 
 function readBody(req) {
   return new Promise((resolve, reject) => {
@@ -34,6 +50,7 @@ export function createRemoteServer({ run, devices }) {
   };
 
   return createServer(async (req, res) => {
+    if (!fromThisPage(req)) return res.writeHead(403).end();
     const url = new URL(req.url ?? "/", "http://localhost");
     const device = url.searchParams.get("device") ?? "";
     const press = url.pathname.match(/^\/press\/(\w+)$/);

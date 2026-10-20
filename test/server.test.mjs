@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { request } from "node:http";
 import { after, before, test } from "node:test";
 
 import { createRemoteServer } from "../src/server.mjs";
@@ -57,4 +58,23 @@ test("serves the page and the device list", async () => {
   assert.match(await page.text(), /Vega web remote/);
   assert.deepEqual(await (await fetch(base + "/devices")).json(), ["VirtualDevice"]);
   assert.equal((await fetch(base + "/elsewhere")).status, 404);
+});
+
+/** A raw request, so the test can set Host and Origin the way a browser would. */
+const raw = (path, headers) =>
+  new Promise((resolve, reject) =>
+    request(base + path, { method: "POST", headers }, (res) => resolve(res.statusCode))
+      .on("error", reject)
+      .end(),
+  );
+
+test("refuses presses from other sites and other hostnames", async () => {
+  const port = new URL(base).port;
+  const path = "/press/home?device=VirtualDevice";
+  assert.equal(await raw(path, { origin: "https://example.com" }), 403);
+  assert.equal(await raw(path, { origin: "null" }), 403);
+  assert.equal(await raw(path, { host: `rebound.example.com:${port}` }), 403);
+  assert.deepEqual(sent, []);
+  assert.equal(await raw(path, { host: `localhost:${port}`, origin: `http://localhost:${port}` }), 204);
+  assert.deepEqual(sent.splice(0), [["VirtualDevice", "inputd-cli button_press KEY_HOMEPAGE short"]]);
 });
