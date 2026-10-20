@@ -1,6 +1,6 @@
 {
   "name": "vega-web-remote",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A full remote control for the Vega Virtual Device and Fire TV devices in developer mode, in a browser tab.",
   "keywords": [
     "vega",
